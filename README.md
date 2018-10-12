@@ -1,4 +1,4 @@
-# test-project
+# Vue Vixens - Pet Store Web App
 
 > A Vue.js project
 

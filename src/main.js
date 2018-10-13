@@ -10,12 +10,14 @@ import store from "./store/store";
 import Home from "./views/Home";
 import Pets from "./views/Pets";
 import Favourites from "./views/Favourites";
+import Form from "./views/Form";
 
 // Routing
 const routes = [
   { path: "/", component: Home },
   { path: "/pets", component: Pets },
-  { path: "/favourites", component: Favourites }
+  { path: "/favourites", component: Favourites },
+  { path: "/form", component: Form }
 ];
 const router = new VueRouter({ routes });
 

@@ -33,6 +33,9 @@ export default new Vuex.Store({
     removeFromFavourites(state, payload) {
       // The first argument is the index of the element we want to start with and the second argument is the number of elements we want to remove.
       state.favourites.splice(state.favourites.indexOf(payload), 1);
+    },
+    clearFavourites(state) {
+      state.favourites = [];
     }
   },
   actions: {
@@ -41,6 +44,9 @@ export default new Vuex.Store({
     },
     removeFromFavourites({ commit }, payload) {
       commit("removeFromFavourites", payload);
+    },
+    clearFavourites({ commit }) {
+      commit("clearFavourites");
     }
   }
 });

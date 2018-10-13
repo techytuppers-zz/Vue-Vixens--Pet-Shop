@@ -5,14 +5,17 @@ import App from "./App";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import VueRouter from "vue-router";
+import store from "./store/store";
 
 import Home from "./views/Home";
 import Pets from "./views/Pets";
+import Favourites from "./views/Favourites";
 
 // Routing
 const routes = [
   { path: "/", component: Home },
-  { path: "/pets", component: Pets }
+  { path: "/pets", component: Pets },
+  { path: "/favourites", component: Favourites }
 ];
 const router = new VueRouter({ routes });
 
@@ -25,5 +28,6 @@ new Vue({
   el: "#app",
   components: { App },
   template: "<App/>",
-  router
+  router,
+  store
 });

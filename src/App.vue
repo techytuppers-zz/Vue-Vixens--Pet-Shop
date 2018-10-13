@@ -6,9 +6,17 @@
           <h1>My Pet Store</h1>
 					<v-toolbar>
 						<v-toolbar-items>
-								<v-btn to="/" flat>Home</v-btn>
-								<v-btn to="/pets" flat>Pets</v-btn>
+							<v-btn to="/" flat>Home</v-btn>
+							<v-btn to="/pets" flat>Pets</v-btn>
 						</v-toolbar-items>
+						<v-spacer></v-spacer>
+						<router-link to="/favourites">
+						<!-- v-model here will handle showing/not showing the grey circle -->
+						<v-badge color="grey lighten-1" overlap right v-model="favourites.length">
+							<span slot="badge">{{favourites.length}}</span>
+								<v-icon large>loyalty</v-icon>
+						</v-badge>
+						</router-link>
 					</v-toolbar>
 					<v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
         </header>
@@ -24,6 +32,11 @@
 <script>
 export default {
   name: "App",
+	computed: {
+		favourites() {
+			return this.$store.state.favourites;
+		},
+	},
   data() {
     return {
       themeSwitched: true
